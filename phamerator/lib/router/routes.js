@@ -41,12 +41,23 @@ Router.map(function() {
   this.route('newDatabase');
   this.route('cresawnlab');
   this.route('domains');
+<<<<<<< HEAD
   this.route('terms');
   this.route('account', {
     loadingTemplate: 'loading',
     waitOn: function() {
       return [Meteor.subscribe('files.images.all'), Meteor.subscribe('fullname')];
     }
+=======
+  this.route('barChart');
+  this.route('account');
+  this.route('help');
+});
+
+if (Meteor.isClient) {
+  Router.plugin('ensureSignedIn', {
+    only: ['account']
+>>>>>>> a40458e2170fde17965d18e4e1db2f51fe6cea53
   });
 });
 
